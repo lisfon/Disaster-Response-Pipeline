@@ -1,2 +1,2 @@
 # Disaster-Response-Pipeline
-Project with the Udacity Data Scientist Nanodegree Program
+Project within the Udacity Data Scientist Nanodegree Program
