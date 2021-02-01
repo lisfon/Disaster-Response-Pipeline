@@ -19,20 +19,19 @@ With this project, which is part of the Data Scientist Nanodegree Program of Uda
 
 Overall structure of the repository:
 
-app
-| - template
-| |- master.html # main page of web app
-| |- go.html # classification result page of web app
-|- run.py # Flask file that runs app
-data
-|- disaster_categories.csv # data to process
-|- disaster_messages.csv # data to process
-|- process_data.py
-|- DisasterResponse.db # database to save clean data to
-models
-|- train_classifier.py
-|- classifier.pkl # saved model
-README.md
+app<br>
+| - template<br>
+| |- master.html # main page of web app<br>
+| |- go.html # classification result page of web app<br>
+|- run.py # Flask file that runs app<br>
+data<br>
+|- disaster_categories.csv # data to process<br>
+|- disaster_messages.csv # data to process<br>
+|- process_data.py<br>
+|- DisasterResponse.db # database to save clean data to models<br>
+|- train_classifier.py<br>
+|- classifier.pkl # saved model<br>
+README.md<br>
 
 In detail the folders are containing the following scripts and files: 
 - app: containing the script for a web app showing visualizations of the data and a classification function, as well as the folder templates with the master and go html files for the structures and visualizations in the app
