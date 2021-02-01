@@ -126,7 +126,7 @@ def evaluate_model(model, X_test, Y_test, category_names):
         print(name)
         report = classification_report(Y_test[name], y_pred_tuned[:, i])
     
-    return report
+    print(report)
 
 def save_model(model, model_filepath):
     """
