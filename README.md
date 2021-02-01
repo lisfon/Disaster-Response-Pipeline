@@ -15,7 +15,7 @@ The code should run with no issues using Python versions 3.* Further libraries s
 
 With this project, which is part of the Data Scientist Nanodegree Program of Udacity, I analysed the disaster data provided by Figure Eight to build a model for an API that classifies disaster messages.
 
-## File Descriptions and results <a name="files"></a>
+## File Descriptions and Instructions <a name="files"></a>
 
 The repository is structured as follows:
 
