@@ -62,6 +62,10 @@ def clean_data(df):
     # concatenate the original dataframe with the new `categories` dataframe
     df = pd.concat([df,categories], axis=1)   
     
+    # check for categories having values different than 0 and 1. Only the related column contains a 2 which is assumed to be 1 and replaced accordingly
+    {i: df[i].unique() for i in category_colnames}
+    df['related'].replace(2, 1, inplace=True)
+    
     # drop duplicates
     df.drop_duplicates(inplace=True)
     
