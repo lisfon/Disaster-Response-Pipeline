@@ -9,7 +9,7 @@
 
 ## Installation <a name="installation"></a>
 
-The code should run with no issues using Python versions 3.* Further libraries such as Pandas, Numpy, sklearn, nltk, SQL Alchemy and Pickle are required and their import will be automatically triggered withing the run of the data/process_data.py and models/train_classifier.py scripts.
+The code should run with no issues using Python versions 3.* Further libraries such as Pandas, Numpy, sklearn, nltk, SQL Alchemy and Pickle are required and their import will be automatically triggered within the scripts data/process_data.py and models/train_classifier.py scripts.
 
 ## Project Motivation<a name="motivation"></a>
 
