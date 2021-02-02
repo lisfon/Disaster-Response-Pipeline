@@ -10,7 +10,7 @@ from nltk.tokenize import word_tokenize
 from nltk.stem import WordNetLemmatizer
 from sklearn.pipeline import Pipeline, FeatureUnion
 from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
-from sklearn.ensemble import AdaBoostClassifier
+from sklearn.ensemble import RandomForestClassifier
 from sklearn.multioutput import MultiOutputClassifier
 from sklearn.model_selection import GridSearchCV
 from sklearn.model_selection import train_test_split
@@ -84,7 +84,7 @@ def build_model():
             tokenize
         
         OUTPUT:
-        Tuned model with classifier AdaBoost Algorithm
+        Tuned model with classifier Random Forest
             
     """  
     
@@ -92,13 +92,14 @@ def build_model():
     pipeline = Pipeline([
         ('vect', CountVectorizer(tokenizer=tokenize)),
         ('tfidf', TfidfTransformer()),
-        ('clf', MultiOutputClassifier(AdaBoostClassifier()))
+        ('clf', MultiOutputClassifier(RandomForestClassifier()))
         ])
     
     # definition of tuning parameter
-    parameters = {'clf__estimator__n_estimators': [25,100],
-              'clf__estimator__learning_rate': [0.02, 2.0]
-                }
+    parameters = {'clf__estimator__criterion': ['entropy', None],
+                'clf__estimator__n_estimators': [15,30,50],
+                   'clf__estimator__min_samples_split': [4,6,10],
+            }
     
     # grid search for better parameter
     cv = GridSearchCV(pipeline, param_grid=parameters, cv=None, n_jobs=-1, verbose=3)
@@ -110,7 +111,7 @@ def evaluate_model(model, X_test, Y_test, category_names):
         Function to train and test the tuned model and evaluate its performance.
         
         INPUT:
-        Tuned model with classifier AdaBoost Algorithm
+        Tuned model with classifier Random Forest Algorithm
         Dataframe splitted for training and testing (X_test, Y_test)
         
         OUTPUT:
